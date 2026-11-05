@@ -37,7 +37,6 @@ public class KafkaAdminClient {
 
     private final WebClient webClient;
 
-
     public KafkaAdminClient(KafkaConfigData config,
                             RetryConfigData retryConfigData,
                             AdminClient client,
@@ -154,7 +153,7 @@ public class KafkaAdminClient {
         LOG.info("Reading kafka topic {}, attempt {}",
                 kafkaConfigData.getTopicNamesToCreate().toArray(), retryContext.getRetryCount());
         Collection<TopicListing> topics = adminClient.listTopics().listings().get();
-        if (topics != null) {
+        if (topics!=null) {
             topics.forEach(topic -> LOG.debug("Topic with name {}", topic.name()));
         }
         return topics;
