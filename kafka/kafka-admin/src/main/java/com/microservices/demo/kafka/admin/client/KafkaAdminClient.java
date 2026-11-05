@@ -77,7 +77,7 @@ public class KafkaAdminClient {
     }
 
     public void checkSchemaRegistry() {
-        int retryCount = 1;
+        int retryCount = 0;
         Integer maxRetry = retryConfigData.getMaxAttempts();
         int multiplier = retryConfigData.getMultiplier().intValue();
         Long sleepTimeMs = retryConfigData.getSleepTimeMs();
