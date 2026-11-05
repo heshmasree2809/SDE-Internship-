@@ -121,7 +121,7 @@ public class KafkaAdminClient {
     }
 
     private boolean isTopicCreated(Collection<TopicListing> topics, String topicName) {
-        if (topics == null) {
+        if (topics==null) {
             return false;
         }
         return topics.stream().anyMatch(topic -> topic.name().equals(topicName));
